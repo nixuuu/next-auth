@@ -5,6 +5,7 @@
   "homepage": "https://next-auth.js.org",
   "repository": "https://github.com/nixuuu/next-auth.git",
   "author": "Iain Collins <me@iaincollins.com>",
+  "access": "public",
   "contributors": [
     "Balázs Orbán <info@balazsorban.com>",
     "Nico Domino <yo@ndo.dev>",
