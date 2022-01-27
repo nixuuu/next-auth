@@ -10,19 +10,22 @@
       <a href="https://github.com/nixuuu/next-auth/actions/workflows/release.yml?query=workflow%3ARelease">
         <img src="https://github.com/nixuuu/next-auth/actions/workflows/release.yml/badge.svg" alt="Release" />
       </a>
-      <a href="https://bundlephobia.com/result?p=next-auth">
-        <img src="https://img.shields.io/bundlephobia/minzip/next-auth" alt="Bundle Size"/>
+      <a href="https://bundlephobia.com/result?p=@nixcode/next-auth">
+        <img src="https://img.shields.io/bundlephobia/minzip/@nixcode/next-auth" alt="Bundle Size"/>
       </a>
-      <a href="https://www.npmtrends.com/next-auth">
-        <img src="https://img.shields.io/npm/dm/next-auth" alt="Downloads" />
+      <a href="https://www.npmtrends.com/@nixcode/next-auth">
+        <img src="https://img.shields.io/npm/dm/@nixcode/next-auth" alt="Downloads" />
       </a>
-      <a href="https://github.com/nextauthjs/next-auth/stargazers">
-        <img src="https://img.shields.io/github/stars/nextauthjs/next-auth" alt="Github Stars" />
+      <a href="https://github.com/nixuuu/next-auth/stargazers">
+        <img src="https://img.shields.io/github/stars/nixuuu/next-auth" alt="Github Stars" />
       </a>
-      <a href="https://www.npmjs.com/package/next-auth">
-        <img src="https://img.shields.io/github/v/release/nextauthjs/next-auth?label=latest" alt="Github Stable Release" />
+      <a href="https://www.npmjs.com/package/@nixcode/next-auth">
+        <img src="https://img.shields.io/github/v/release/nixuuu/next-auth?label=latest" alt="Github Stable Release" />
       </a>
-      <img src="https://img.shields.io/github/v/release/nextauthjs/next-auth?include_prereleases&label=prerelease&sort=semver" alt="Github Prelease" />
+      <img src="https://img.shields.io/github/v/release/nixuuu/next-auth?include_prereleases&label=prerelease&sort=semver" alt="Github Prelease" />
+      <a href="https://github.com/semantic-release/semantic-release">
+        <img src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release" alt="Github Prelease" />
+      </a>
    </p>
 </p>
 
@@ -39,15 +42,13 @@ This is the core repo for NextAuth.js. Check the repos below if you are interest
 
 ## Changes relative to the source repository
 
-```
 - fixed login using Credentials provider with session strategy: database
 - fixed FACEIT provider
-```
 
 ## Getting Started
 
 ```
-npm install --save next-auth
+npm install --save @nixcode/next-auth
 ```
 
 The easiest way to continue getting started, is to follow the [getting started](https://next-auth.js.org/getting-started/example) section in our docs.
@@ -102,10 +103,10 @@ the [TypeScript section](https://next-auth.js.org/getting-started/typescript) in
 
 ```javascript
 // pages/api/auth/[...nextauth].js
-import NextAuth from "next-auth"
-import AppleProvider from "next-auth/providers/apple"
-import GoogleProvider from "next-auth/providers/google"
-import EmailProvider from "next-auth/providers/email"
+import NextAuth from "@nixcode/next-auth"
+import AppleProvider from "@nixcode/next-auth/providers/apple"
+import GoogleProvider from "@nixcode/next-auth/providers/google"
+import EmailProvider from "@nixcode/next-auth/providers/email"
 
 export default NextAuth({
   secret: process.env.SECRET,
@@ -133,7 +134,7 @@ export default NextAuth({
 The `useSession()` React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
 
 ```javascript
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from "@nixcode/next-auth/react"
 
 export default function Component() {
   const { data: session } = useSession()
@@ -159,7 +160,7 @@ export default function Component() {
 Use the `<SessionProvider>` to allow instances of `useSession()` to share the session object across components. It also takes care of keeping the session updated and synced between tabs/windows.
 
 ```jsx title="pages/_app.js"
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from "@nixcode/next-auth/react"
 
 export default function App({
   Component, 
@@ -177,66 +178,15 @@ export default function App({
 
 [NextAuth.js is made possible thanks to all of its contributors.](https://next-auth.js.org/contributors)
 
-<a href="https://github.com/nextauthjs/next-auth/graphs/contributors">
-  <img width="500px" src="https://contrib.rocks/image?repo=nextauthjs/next-auth" />
+<a href="https://github.com/nixuuu/next-auth/graphs/contributors">
+  <img width="500px" src="https://contrib.rocks/image?repo=nixuuu/next-auth" />
 </a>
-<div>
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss"></a>
-</div>
 
-### Support
-
-We're happy to announce we've recently created an [OpenCollective](https://opencollective.com/nextauth) for individuals and companies looking to contribute financially to the project!
-
-<!--sponsors start-->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top">
-        <a href="https://vercel.com" target="_blank">
-          <img width="128px" src="https://avatars.githubusercontent.com/u/14985020?v=4" alt="Vercel Logo" />
-        </a><br />
-        <div>Vercel</div><br />
-        <sub>🥉 Bronze Financial Sponsor <br /> ☁️ Infrastructure Support</sub>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://prisma.io" target="_blank">
-          <img width="128px" src="https://avatars.githubusercontent.com/u/17219288?v=4" alt="Prisma Logo" />
-        </a><br />
-        <div>Prisma</div><br />
-        <sub>🥉 Bronze Financial Sponsor</sub>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://clerk.dev" target="_blank">
-          <img width="128px" src="https://avatars.githubusercontent.com/u/49538330?s=200&v=4" alt="Prisma Logo" />
-        </a><br />
-        <div>Clerk</div><br />
-        <sub>🥉 Bronze Financial Sponsor</sub>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://checklyhq.com" target="_blank">
-          <img width="128px" src="https://avatars.githubusercontent.com/u/25982255?v=4" alt="Checkly Logo" />
-        </a><br />
-        <div>Checkly</div><br />
-        <sub>☁️ Infrastructure Support</sub>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://superblog.ai/" target="_blank">
-          <img width="128px" src="https://d33wubrfki0l68.cloudfront.net/cdc4a3833bd878933fcc131655878dbf226ac1c5/10cd6/images/logo_bolt_small.png" alt="superblog Logo" />
-        </a><br />
-        <div>superblog</div><br />
-        <sub>☁️ Infrastructure Support</sub>
-      </td>
-    </tr><tr></tr>
-  </tbody>
-</table>
-<br />
-<!--sponsors end-->
 
 ## Contributing
 
 We're open to all community contributions! If you'd like to contribute in any way, please first read
-our [Contributing Guide](https://github.com/nextauthjs/next-auth/blob/main/CONTRIBUTING.md).
+our [Contributing Guide](https://github.com/nixuuu/next-auth/blob/main/CONTRIBUTING.md).
 
 ## License
 
