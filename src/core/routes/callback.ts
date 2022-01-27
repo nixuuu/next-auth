@@ -425,6 +425,7 @@ export default async function callback(params: {
     const credentials = body
 
     let user: User
+    let profile;
     try {
       user = (await provider.authorize(credentials, {
         query,
@@ -432,7 +433,8 @@ export default async function callback(params: {
         headers,
         method,
       })) as User
-      if (!user) {
+      profile = user?.id && await getUser(user.id);
+      if (!user || !profile) {
         return {
           status: 401,
           redirect: `${url}/error?${new URLSearchParams({
@@ -450,8 +452,6 @@ export default async function callback(params: {
         cookies,
       }
     }
-
-    const profile = await getUser(user.id);
 
     /** @type {import("src").Account} */
     const account = {
