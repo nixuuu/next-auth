@@ -4,8 +4,8 @@
   "description": "NextAuth.js Developer app",
   "private": true,
   "scripts": {
-    "clean": "rm -rf .next",
-    "postinstall": "rm -rf node_modules/next-auth",
+    "clean": "rimraf .next",
+    "postinstall": "rimraf node_modules/next-auth",
     "dev": "npm-run-all --parallel dev:next watch:css copy:css ",
     "dev:next": "next dev",
     "build": "next build",
