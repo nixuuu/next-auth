@@ -37,6 +37,13 @@ This is the core repo for NextAuth.js. Check the repos below if you are interest
 - Docs related: https://github.com/nextauthjs/docs
 - Adapter related: https://github.com/nextauthjs/adapters
 
+## Changes relative to the source repository
+
+```
+- fixed login using Credentials provider with session strategy: database
+- fixed FACEIT provider
+```
+
 ## Getting Started
 
 ```
