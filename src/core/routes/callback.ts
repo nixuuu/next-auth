@@ -488,7 +488,6 @@ export default async function callback(params: {
     // @ts-expect-error
     const {session} = await callbackHandler({
       sessionToken: sessionStore.value,
-      // @ts-expect-error
       profile,
       // @ts-expect-error
       account,
