@@ -7,6 +7,7 @@ import type { Adapter } from "../adapters"
  */
 export class UnknownError extends Error {
   code: string
+  name: ErrorName;
   constructor(error: Error | string) {
     // Support passing error or string
     super((error as Error)?.message ?? error)
@@ -62,6 +63,17 @@ export class UnsupportedStrategy extends UnknownError {
   name = "UnsupportedStrategyError"
   code = "CALLBACK_CREDENTIALS_JWT_ERROR"
 }
+
+export type ErrorName =
+  'OAuthCallbackError' |
+  'AccountNotLinkedError' |
+  'MissingAPIRouteError' |
+  'MissingSecretError' |
+  'MissingAuthorizeError' |
+  'MissingAdapterError' |
+  'UnsupportedStrategyError' |
+  'UnknownError' |
+  string;
 
 type Method = (...args: any[]) => Promise<any>
 
