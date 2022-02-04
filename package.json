@@ -30,6 +30,7 @@
     "./react": "./react/index.js",
     "./core": "./core/index.js",
     "./next": "./next/index.js",
+    "./middleware": "./middleware.js",
     "./client/_utils": "./client/_utils.js",
     "./providers/*": "./providers/*.js"
   },
@@ -60,7 +61,9 @@
     "core",
     "index.d.ts",
     "index.js",
-    "adapters.d.ts"
+    "adapters.d.ts",
+    "middleware.d.ts",
+    "middleware.js"
   ],
   "license": "ISC",
   "dependencies": {
