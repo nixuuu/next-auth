@@ -55,6 +55,7 @@ export default async function session(
           name: decodedToken?.name,
           email: decodedToken?.email,
           image: decodedToken?.picture,
+          roles: decodedToken?.roles as string[] || [],
         },
         expires: newExpires.toISOString(),
       }
@@ -132,6 +133,7 @@ export default async function session(
               name: user.name,
               email: user.email,
               image: user.image,
+              roles: user.roles as string[] || [],
             },
             expires: session.expires.toISOString(),
           },

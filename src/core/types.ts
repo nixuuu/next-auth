@@ -409,6 +409,7 @@ export interface DefaultSession extends Record<string, unknown> {
     name?: string | null
     email?: string | null
     image?: string | null
+    roles?: string[] | null
   }
   expires: ISODateString
 }
